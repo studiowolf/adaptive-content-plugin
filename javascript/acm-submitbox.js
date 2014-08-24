@@ -40,11 +40,10 @@ jQuery(document).ready(function() {
             jQuery('#post-locked').prop('checked', false);
             jQuery('#post-locked-display').html('Nee');
         }
+        
         jQuery('#post-locked-reference').val(postLockedReference);
-
         event.preventDefault();
     });
-
 
     // Display in navigation
     // When edit is pressed
@@ -73,7 +72,7 @@ jQuery(document).ready(function() {
         jQuery('#post-navigation-input').slideUp(200);
         jQuery('.edit-post-navigation').show();
 
-         var postNavigation = jQuery('#hidden-post-navigation').val();
+        var postNavigation = jQuery('#hidden-post-navigation').val();
 
         // Do we need to check or uncheck the box
         if(postNavigation == 1) {
