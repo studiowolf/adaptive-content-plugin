@@ -1,0 +1,59 @@
+1.4
+- Added changelog.txt
+- Field groups are now hidden if they don't have any field when those are
+  removed trough the filter
+- Possibility to find the post or page title by reference
+- Added filter for reference based lookups (allowing WPML to hook in)
+- Added media buttons to editor to insert placement suggestions when ACM is enabled
+- Fixed order of repeater fields
+- Fixed reference type in order to fetch page by reference
+- In sw_get_window_title changed blogname to organisation field
+- Replaced title with search string for searches
+- Insert proper title when page is 404 (sw_get_window_title)
+
+1.4.1
+- Added shorttags for images and videos
+
+1.4.2
+- Fixed shorttagbug which prevented the first video from showing
+
+1.4.3
+- Stripped tags from window title
+- Changed the display rules for the adaptive content field from show_ui to public true
+
+1.4.4
+- Don't show shorttags buttons for images and videos if these options are disabled
+
+1.4.5
+- Added option to hook filters before image or video is inserted from shorttags
+
+1.5
+- Rewritten ACM get field functions
+- Allowed revisions to be fetched, so previews work for ACM fields
+
+1.5.1
+- Fixed bug for getting first image by ID
+- Fixed bug for getting videos
+
+1.6
+- Added the thumbnail media field
+- Fixed bug that a page cannot have a thumbnail
+
+1.7
+- Added the sw_media_buttons filter. This gives you the possiblity to show the shorttag
+  buttons even when the fields are not visible
+- Removed the never used priority field
+- Fixed bug that managing editors can not delete pages
+
+1.8
+- Added the possibility to lock taxonomy terms
+- Temp. removed the review option
+
+2.0
+- Upgraded to support ACF 5, not backwards compatible
+
+2.0.1
+- Changed the query in get_children() to sort on menu_order
+
+2.1.0
+- Added support for ACF 4 again

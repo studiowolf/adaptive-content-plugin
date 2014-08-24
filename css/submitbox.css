@@ -1,0 +1,22 @@
+/* The locked post area in the submitbox */
+#post-locked-display { font-weight: bold; }
+#post-locked-input { margin-top: 7px; }
+#post-locked { margin-bottom: 5px; }
+
+/* The display in navigation area in the submitbox */
+#post-navigation-display { font-weight: bold; }
+#post-navigation-input { margin-top: 7px; }
+#post-navigation { margin-bottom: 5px; }
+
+/* Remove the badly aligned calendar */
+.curtime #timestamp {
+    background: none;
+    padding-left: 0px;
+}
+
+#publishing-action .button {
+}
+
+.form-field input[type=checkbox] {
+    width: auto;
+}
