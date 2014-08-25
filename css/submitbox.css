@@ -11,10 +11,7 @@
 /* Remove the badly aligned calendar */
 .curtime #timestamp {
     background: none;
-    padding-left: 0px;
-}
-
-#publishing-action .button {
+    padding-left: 0;
 }
 
 .form-field input[type=checkbox] {
