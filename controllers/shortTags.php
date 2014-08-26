@@ -51,6 +51,7 @@ class SWShortTags
     {
         add_shortcode('afbeelding', array($this, 'tag_insert_image'));
         add_shortcode('video', array($this, 'tag_insert_embed'));
+        add_shortcode('bestand', array($this, 'tag_insert_file'));
     }
 
 
@@ -80,7 +81,7 @@ class SWShortTags
         if($code) {
             // hook filter to change embed code, first the image-tag, second the image itself
             $code = apply_filters('sw_insert_image', $code, $image);
-            
+
             return '<figure class="image">' . $code . '</figure>';
         } else {
             return false;
@@ -110,6 +111,40 @@ class SWShortTags
         // Make html fiterable
         if($code) {
             return '<figure class="video">' . $code . '</figure>';
+        } else {
+            return false;
+        }
+    }
+
+    var $files;
+    static $file_index = 0;
+
+    function tag_insert_file()
+    {
+        $code = false;
+
+        // Check if files are loaded
+        if(!$this->files) {
+            // If not load files. Only load when needed
+            $this->files = sw_get_files();
+        }
+
+        if(isset($this->files[self::$file_index])) {
+            // Index found, try to include the file, and add one to index
+            if(is_array($this->files[self::$file_index])){
+                $file_id = $this->files[self::$file_index]['file'];
+            } else {
+                $file_id = $this->files[self::$file_index]->ID;
+            }
+
+            $code = sw_get_file_tag($file_id);
+            self::$file_index++;
+        }
+
+        // Make html fiterable
+        if($code) {
+            $code = apply_filters('sw_insert_file', $code, $file_id);
+            return '<span class="file">' . $code . '</span>';
         } else {
             return false;
         }
