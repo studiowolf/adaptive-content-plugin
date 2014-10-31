@@ -7,7 +7,7 @@ Version: 2.0.1 beta
 Author: Studio Wolf
 Author URI: http://www.studiowolf.nl/
 License: For unlimited single website usage, do not copy
-Copyright: Studio Wolf (hallo@studiwolf.com)
+Copyright: Studio Wolf (hallo@studiowolf.com)
 */
 
 
