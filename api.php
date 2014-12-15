@@ -268,7 +268,7 @@ function sw_get_images($post_id = null, $amount = false)
 function sw_get_thumbnail($post_id = null)
 {
     if(!$thumbnail = sw_get_field('thumbnail', $post_id)) {
-        $thumbnail = sw_get_first_image();
+        $thumbnail = sw_get_first_image($post_id, false);
     }
     return $thumbnail;
 }
@@ -283,10 +283,12 @@ function sw_get_thumbnail($post_id = null)
  * @since  1.0
  */
 
-function sw_get_first_image($post_id = null)
+function sw_get_first_image($post_id = null, $raiseIndex = false)
 {
     if($image_ids = sw_get_images($post_id)) {
-        SWShortTags::$image_index++;
+        if($raiseIndex) {
+            SWShortTags::$image_index++;
+        }
         return array_shift($image_ids);
     }
     return false;
